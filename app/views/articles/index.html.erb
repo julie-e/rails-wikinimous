@@ -9,12 +9,14 @@
       <% @articles.each do |article| %>
       <li class="article">
           <h2><%= link_to article.title, article_path(article) %></h2>
-          <p><%= article.content %>
+          <p><%= raw Kramdown::Document.new(article.content).to_html %> Created : <%= article.created_at%>
           <%= link_to "See more" , article_path(article)%></p>
-          <ul class="list-inline">
-            <li class="update"><%= link_to "UPDATE", edit_article_path(article) %></li>
-            <li class="delete"><%= link_to "DELETE", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></li>
-          </ul>
+          <div class="text-center">
+            <ul class="list-inline">
+              <li><%= link_to "UPDATE", edit_article_path(article), class: "btn btn-primary"%></li>
+              <li><%= link_to "DELETE", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary"%></li>
+            </ul>
+          </div>
       </li>
       <% end %>
     </ul>
@@ -23,4 +25,6 @@
   </div>
 </div>
 
-<h3 class="footer text-center"><%= link_to "Write an article", new_article_path(@article) %></h3>
+<div class="footer text-center">
+<%= link_to "Write an article", new_article_path(@article), class:"footer btn btn-primary" %>
+</div>

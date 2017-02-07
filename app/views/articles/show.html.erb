@@ -8,4 +8,6 @@
     <p><%= @article.content %></p>
 </div>
 
-  <p class="footer text-center"><%= link_to "Back to articles", articles_path(@articles) %></p>
+<div class="text-center">
+  <%= link_to "Back to articles", articles_path(@articles), class: "footer btn btn-primary" %>
+</div>
