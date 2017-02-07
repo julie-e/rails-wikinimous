@@ -1,7 +1,11 @@
-<div class="text-center">
-  <h1><%= @article.title %></h1>
-
-  <p><%= @article.content %></p>
-
-  <%= link_to "Back to articles", articles_path(@articles) %>
+<div class="header">
+  <h1 class="title text-center">Here is your article</h1>
 </div>
+
+<div class="wraper text-center">
+    <h1><%= @article.title %></h1>
+
+    <p><%= @article.content %></p>
+</div>
+
+  <p class="footer text-center"><%= link_to "Back to articles", articles_path(@articles) %></p>

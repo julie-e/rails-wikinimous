@@ -1,9 +1,9 @@
-<%= form_for(@article) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-<% end %>
+<div class="header">
+  <h1 class="title text-center">Update Your Article</h1>
+</div>
+
+<div class="wraper">
+  <%= render "form" %>
+</div>
 
 <p><%= link_to "Cancel", articles_path(@articles) %></p>
